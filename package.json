@@ -1,0 +1,11 @@
+{
+  "name": "gulp-rev-timestamp",
+  "version": "1.0.0",
+  "description": "Appends a timestamp to query string",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CVS",
+  "license": "ISC"
+}
