@@ -80,7 +80,8 @@ gulp.task('rev-timestamp', function() {
 
 ```
 
-When mode => revision
+Type : `String`<br>
+Default: `timestamp`
 
 ```js
 var gulp = require('gulp');
