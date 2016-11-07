@@ -1,16 +1,20 @@
-# gulp-rev-timestamp
-
-gulp-rev-timestamp provides you an option to either read your file and generate a hash out of it or just generate a hash(timestamp or revision) without checking the existance of the files and just replacing the query string every time regardless of file being changed or not.
-
 ## Install
+
 ```sh
-$ npm install --save-dev gulp-rev-timestamp
+$ npm install --save gulp-rev-timestamp
 ```
 ## Why another plugin?
 
 This plugin is based on gulp-rev-append which is very good and in some cases even better, because it relies on file hash, so if file didn't change between versions, the hash will remain the same so file can stay in cache.
 
 gulp-rev-timestamp provides you an option to either read your file and generate a hash out of it what rev-append does or just generate a hash(timestamp or revision) and replace the query string every time regardless of file being changed or not. This way regardless of file contents changes or not, you have a new query string every time appended to file. This is bit faster than the first option, as it does not require to read the contents of file every time and generate a hash based on it.  
+
+## RegularExpression
+
+```sh
+var FILE_DECL = /(?:href=|src=|url\()['|"]([^\s>"']+?)\?rev=([^\s>"']+?)['|"]/gi;
+```
+
 
 ## Usage
 
@@ -84,8 +88,7 @@ gulp.task('rev-timestamp', function() {
 
 ```
 
-Type : `String`<br>
-Default: `timestamp`
+When mode => revision
 
 ```js
 var gulp = require('gulp');
