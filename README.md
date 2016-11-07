@@ -65,9 +65,9 @@ to below with a hash of timestamp, regardless of file being changed or not:
 
 ```sh
 <!-- Minified Files -->
-<script src="../path/config.min.js?rev=51dc1baa4a2dac96097d56de62d860a3"></script>
-<script src="../path/app.min.js?rev=7a5a2adc42842b0e2b317440cdc2957f"></script>
-<script src="../path/serivices.min.js?rev=46abc154eb09e362ad9ae4f7e69868dc"></script>
+<script src="../path/config.min.js?rev=1e7aa69df74343571bf4977b685cb496"></script>
+<script src="../path/app.min.js?rev=1ed8a9d8c7aa5de44043ca86e9624248"></script>
+<script src="../path/serivices.min.js?rev=341a3c405f3445e8a0d908ff1a4542ab"></script>
 <!-- Minified Files -->
 
 ```
