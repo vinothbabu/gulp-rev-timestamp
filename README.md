@@ -30,7 +30,6 @@ gulp.task('rev-timestamp', function() {
     .pipe(gulp.dest('.'))
 });
 
-```
 
 ### Options
 
@@ -48,7 +47,31 @@ gulp.task('rev-timestamp', function() {
     .pipe(gulp.dest('.'))
 });
 
+
 ```
+
+The above task would replace any
+
+```sh
+<!-- Minified Files -->
+<script src="../path/config.min.js?rev=@@hash"></script>
+<script src="../path/app.min.js?rev=@@hash"></script>
+<script src="../path/serivices.min.js?rev=@@hash"></script>
+<!-- Minified Files -->
+
+```
+
+to below with a hash of timestamp, regardless of file being changed or not:
+
+```sh
+<!-- Minified Files -->
+<script src="../path/config.min.js?rev=51dc1baa4a2dac96097d56de62d860a3"></script>
+<script src="../path/app.min.js?rev=7a5a2adc42842b0e2b317440cdc2957f"></script>
+<script src="../path/serivices.min.js?rev=46abc154eb09e362ad9ae4f7e69868dc"></script>
+<!-- Minified Files -->
+
+```
+
 
 #### strict
 
@@ -66,6 +89,31 @@ gulp.task('rev-timestamp', function() {
     .pipe(revts({strict: true}))
     .pipe(gulp.dest('.'))    
 });
+
+```
+
+
+```
+
+The above task would replace any
+
+```sh
+<!-- Minified Files -->
+<script src="../path/config.min.js?rev=@@hash"></script>
+<script src="../path/app.min.js?rev=@@hash"></script>
+<script src="../path/serivices.min.js?rev=@@hash"></script>
+<!-- Minified Files -->
+
+```
+
+to below with a hash of content of file only if the file content has changed:
+
+```sh
+<!-- Minified Files -->
+<script src="../path/config.min.js?rev=51dc1baa4a2dac96097d56de62d860a3"></script>
+<script src="../path/app.min.js?rev=7a5a2adc42842b0e2b317440cdc2957f"></script>
+<script src="../path/serivices.min.js?rev=46abc154eb09e362ad9ae4f7e69868dc"></script>
+<!-- Minified Files -->
 
 ```
 
@@ -99,6 +147,31 @@ gulp.task('rev-timestamp', function() {
     .pipe(revts({strict: false, mode: 'revision', revision: '55'}))
     .pipe(gulp.dest('.'))
 });
+
+```
+
+
+```
+
+The above task would replace any
+
+```sh
+<!-- Minified Files -->
+<script src="../path/config.min.js?rev=@@hash"></script>
+<script src="../path/app.min.js?rev=@@hash"></script>
+<script src="../path/serivices.min.js?rev=@@hash"></script>
+<!-- Minified Files -->
+
+```
+
+to below with a revision, preferrably coming from svn repo global version also does not check whether the contents of file has been changed or not:
+
+```sh
+<!-- Minified Files -->
+<script src="../path/config.min.js?rev=55"></script>
+<script src="../path/app.min.js?rev=55"></script>
+<script src="../path/serivices.min.js?rev=55"></script>
+<!-- Minified Files -->
 
 ```
 ## License

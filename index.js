@@ -20,7 +20,7 @@ var revTimeStamp = function(options){
         options.mode="timestamp";
     if(!options.hasOwnProperty("revision"))
         options.revision=0;
-
+    console.log(options.mode);
     if(!file)
         throw new PluginError('gulp-rev-append', 'Missing file option for gulp-rev-append.');
     if(!file.contents)
@@ -66,7 +66,7 @@ var revTimeStamp = function(options){
           else if(options.mode=="revision")
           {
               try {
-                  line = line.replace(groups[2], crypto.createHash('md5').update(options.revision).digest('hex'));
+                  line = line.replace(groups[2], options.revision);
               }catch(e){
                   console.log("loop "+i+" failed on revision:"+options.revision,e);
               }
