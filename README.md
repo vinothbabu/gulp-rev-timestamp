@@ -96,9 +96,6 @@ gulp.task('rev-timestamp', function() {
 
 ```
 
-
-```
-
 The above task would replace any
 
 ```js
@@ -151,9 +148,6 @@ gulp.task('rev-timestamp', function() {
     .pipe(revts({strict: false, mode: 'revision', revision: '55'}))
     .pipe(gulp.dest('.'))
 });
-
-```
-
 
 ```
 
