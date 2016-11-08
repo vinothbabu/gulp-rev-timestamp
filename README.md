@@ -31,6 +31,9 @@ gulp.task('rev-timestamp', function() {
 });
 
 
+
+```
+
 ### Options
 
 #### default
@@ -52,7 +55,7 @@ gulp.task('rev-timestamp', function() {
 
 The above task would replace any
 
-```sh
+```js
 <!-- Minified Files -->
 <script src="../path/config.min.js?rev=@@hash"></script>
 <script src="../path/app.min.js?rev=@@hash"></script>
@@ -63,7 +66,7 @@ The above task would replace any
 
 to below with a hash of timestamp, regardless of file being changed or not:
 
-```sh
+```js
 <!-- Minified Files -->
 <script src="../path/config.min.js?rev=1e7aa69df74343571bf4977b685cb496"></script>
 <script src="../path/app.min.js?rev=1ed8a9d8c7aa5de44043ca86e9624248"></script>
@@ -90,6 +93,7 @@ gulp.task('rev-timestamp', function() {
     .pipe(gulp.dest('.'))    
 });
 
+
 ```
 
 
@@ -97,7 +101,7 @@ gulp.task('rev-timestamp', function() {
 
 The above task would replace any
 
-```sh
+```js
 <!-- Minified Files -->
 <script src="../path/config.min.js?rev=@@hash"></script>
 <script src="../path/app.min.js?rev=@@hash"></script>
@@ -108,7 +112,7 @@ The above task would replace any
 
 to below with a hash of content of file only if the file content has changed:
 
-```sh
+```js
 <!-- Minified Files -->
 <script src="../path/config.min.js?rev=51dc1baa4a2dac96097d56de62d860a3"></script>
 <script src="../path/app.min.js?rev=7a5a2adc42842b0e2b317440cdc2957f"></script>
