@@ -159,7 +159,7 @@ gulp.task('rev-timestamp', function() {
 
 The above task would replace any
 
-```sh
+```js
 <!-- Minified Files -->
 <script src="../path/config.min.js?rev=@@hash"></script>
 <script src="../path/app.min.js?rev=@@hash"></script>
@@ -178,6 +178,7 @@ to below with a revision, preferrably coming from svn repo global version also d
 <!-- Minified Files -->
 
 ```
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © [Vinoth Babu]
