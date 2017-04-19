@@ -20,7 +20,6 @@ var revTimeStamp = function(options){
         options.mode="timestamp";
     if(!options.hasOwnProperty("revision"))
         options.revision=0;
-    console.log(options.mode);
     if(!file)
         throw new PluginError('gulp-rev-append', 'Missing file option for gulp-rev-append.');
     if(!file.contents)
