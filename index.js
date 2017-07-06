@@ -47,7 +47,7 @@ var revTimeStamp = function(options){
                   data = fs.readFileSync(dependencyPath);
                   hash = crypto.createHash('md5');
                   hash.update(data.toString(), 'utf8');
-                  line = line.replace(groups[2], hash.digest('hex'));
+                  line = line.replace(new RegExp(groups[2], 'g'), hash.digest('hex'));
               }catch(e){
                   console.log("loop "+i+" failed on strict:true",e);
               }
@@ -57,7 +57,7 @@ var revTimeStamp = function(options){
               try {
                   var current_date = (new Date()).valueOf().toString();
                   var random = Math.random().toString();
-                  line = line.replace(groups[2], crypto.createHash('md5').update(current_date + random).digest('hex'));
+                  line = line.replace(new RegExp(groups[2], 'g'), crypto.createHash('md5').update(current_date + random).digest('hex'));
               }catch(e){
                   console.log("loop "+i+" failed on mode:timestamp",e);
               }
@@ -65,7 +65,7 @@ var revTimeStamp = function(options){
           else if(options.mode=="revision")
           {
               try {
-                  line = line.replace(groups[2], options.revision);
+                  line = line.replace(new RegExp(groups[2], 'g'), options.revision);
               }catch(e){
                   console.log("loop "+i+" failed on revision:"+options.revision,e);
               }
