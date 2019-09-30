@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "event-stream": "^3.1.0",
-    "gulp-util": "^2.2.14"
+    "plugin-error": "^1.0.1"
   },
   "author": "CVS",
   "license": "ISC"
