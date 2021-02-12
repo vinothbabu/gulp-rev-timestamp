@@ -2,8 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var crypto = require('crypto');
 var Buffer = require('buffer').Buffer;
-var gutil = require('gulp-util');
-var PluginError = gutil.PluginError;
+var PluginError = require('plugin-error');
 var map = require('event-stream').map;
 
 var FILE_DECL = /(?:href=|src=|url\()['|"]([^\s>"']+?)\?rev=([^\s>"']+?)['|"]/gi;
